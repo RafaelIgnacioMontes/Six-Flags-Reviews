@@ -12,7 +12,8 @@ const main = async () => {
       height_requirement: '48"',
       ride_time: '2:05',
       max_speed: '58mph',
-      intensity: 'Maximum'
+      intensity: 'Maximum',
+      reviews: []
     },
     {
       name: 'Green Lantern',
@@ -22,7 +23,8 @@ const main = async () => {
       height_requirement: '54"',
       ride_time: '2:30',
       max_speed: '64mph',
-      intensity: 'Maximum'
+      intensity: 'Maximum',
+      reviews: []
     },
     {
       name: 'Houdinis great escape',
@@ -32,10 +34,11 @@ const main = async () => {
       height_requirement: 'Adult(none)  Child: 48" No Lap Children',
       ride_time: 'unknown',
       max_speed: 'slow',
-      intensity: 'Mild'
+      intensity: 'Mild',
+      reviews: []
     }
   ]
-  await Rcoaster.instertMany(Rcoasters)
+  await Rcoaster.insertMany(Rcoasters)
   console.log('Created some rides')
 }
 const run = async () => {
