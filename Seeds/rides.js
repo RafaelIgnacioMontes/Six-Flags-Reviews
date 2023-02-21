@@ -35,7 +35,7 @@ const main = async () => {
       intensity: 'Mild'
     }
   ]
-  await Rcoaster.insterMany(Themeparks)
+  await Rcoaster.instertMany(Rcoasters)
   console.log('Created some rides')
 }
 const run = async () => {
