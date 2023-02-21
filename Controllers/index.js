@@ -1,23 +1,12 @@
 const Rcoaster = require('../models/rollercoasters')
+const reviewSchema = require('../models/rollercoasters')
 
-const createReview = (req, res) => {
+const createReview = async (req, res) => {
   try {
-    console.log(req.params.id, 'req.params.id')
-    console.log(req.body, 'req.body')
-    Rcoaster.findById(req.params.id, function (err, Rcoasterdoc) {
-      Rcoasterdoc.reviews.push(req.body)
-      console.log(Rcoasterdoc)
-      Rcoasterdoc.save()
-    })
-    //   const reviewFind = await Rcoaster.findById(req.params.id)
-    //   const review = await new reviewSchema(req.body)
-    //   await review.save()
-
-    //   reviewFind.reviews.push(review._id)
-    //   reviewFind.save()
-    //   return res.status(201).json({
-    //     review
-    //   })
+    let coaster = await Rcoaster.findById(req.params.id)
+    coaster.reviews.push(reviewSchema._id)
+    coaster.save()
+    res.send(coaster)
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
@@ -25,7 +14,7 @@ const createReview = (req, res) => {
 
 const getAllReviews = async (req, res) => {
   try {
-    const reviews = await Review.find()
+    const reviews = await reviewSchema.find()
     return res.status(200).json({ reviews })
   } catch (error) {
     return res.status(500).send(error.message)
@@ -35,11 +24,13 @@ const getAllReviews = async (req, res) => {
 const getReviewById = async (req, res) => {
   try {
     const { id } = req.params
-    const review = await Review.findById(id)
-    if (review) {
-      return res.status(200).json({ plant })
+    const review = await Rcoaster.findById(id)
+    if (Rcoaster) {
+      return res.status(200).json({ review })
     }
-    return res.status(404).send('Review with the specified ID does not exists')
+    return res
+      .status(404)
+      .send('Rcoaster with the specified ID does not exists')
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -48,7 +39,8 @@ const getReviewById = async (req, res) => {
 const deleteReview = async (req, res) => {
   try {
     const { id } = req.params
-    const deleted = await Review.findByIdAndDelete(id)
+    const deleted = await reviewSchema.findByIdAndDelete([id])
+    console.log(id)
     if (deleted) {
       return res.status(200).send('Review deleted')
     }
