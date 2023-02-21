@@ -1,4 +1,3 @@
-
 const { Schema } = require('mongoose')
 
 const reviewSchema = new Schema(
@@ -11,4 +10,3 @@ const reviewSchema = new Schema(
 )
 
 module.exports = reviewSchema
-
