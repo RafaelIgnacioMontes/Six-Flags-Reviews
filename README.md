@@ -10,6 +10,8 @@
 
 ### By: Rafael Montes, Hector Flores, and Eduardo Puerta
 
+#### [Trello](https://trello.com/b/iORWTd8g/six-flags-review) | [Component Hierarcy Diagram](https://lucid.app/lucidchart/3e35b217-7162-4bf6-b892-53eec64e39b2/edit?viewport_loc=-24%2C52%2C2457%2C1205%2C0_0&invitationId=inv_9e83658b-3b45-4e5b-992b-1a0cfd0e412f) | [ERD](https://drive.google.com/file/d/1YXV_fH_tGbMumNDO-LWcTi83_hVRrWqD/view?usp=sharing)
+
 ### **_Description_**
 
 #### A webiste where people can review their roller coaster experiences.
