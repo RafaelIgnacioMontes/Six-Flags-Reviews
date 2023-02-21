@@ -1,6 +1,7 @@
-const { Schema } = require('mongoose')
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const rollercoasterSchema = new Schema(
+const Rcoaster = new Schema(
   {
     name: { type: String, required: true },
     picture: { type: String, required: true },
@@ -13,4 +14,4 @@ const rollercoasterSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = rollercoasterSchema
+module.exports = mongoose.model('Rcoaster', Rcoaster)
