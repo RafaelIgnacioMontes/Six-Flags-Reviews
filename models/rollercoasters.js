@@ -19,7 +19,7 @@ const Rcoaster = new Schema(
     ride_time: { type: String, required: true },
     max_speed: { type: String, required: true },
     intensity: { type: String, required: true },
-    reviews: [{ type: Schema.Types.ObjectId, ref: 'reviewSchema' }]
+    reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }]
   },
   { timestamps: true }
 )
