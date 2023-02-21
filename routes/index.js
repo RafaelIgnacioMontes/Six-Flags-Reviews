@@ -6,4 +6,12 @@ router.get('/', (req, res) => res.send('DB connected!'))
 
 router.post('/rides', controllers.createRides)
 
+router.get('/rides', controllers.getAllRides)
+
+router.delete('/rides/:id', controllers.deleteRide)
+
+router.post('/rides/:id/review', controllers.createReview)
+
+router.delete('/rides/:id/review', controllers.deleteReview)
+
 module.exports = router

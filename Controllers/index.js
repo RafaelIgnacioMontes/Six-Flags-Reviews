@@ -1,13 +1,23 @@
-const Review = require('../models/reviews')
 const Rcoaster = require('../models/rollercoasters')
 
-const createReview = async (req, res) => {
+const createReview = (req, res) => {
   try {
-    const review = await new Review(req.body)
-    await review.save()
-    return res.status(201).json({
-      review
+    console.log(req.params.id, 'req.params.id')
+    console.log(req.body, 'req.body')
+    Rcoaster.findById(req.params.id, function (err, Rcoasterdoc) {
+      Rcoasterdoc.reviews.push(req.body)
+      console.log(Rcoasterdoc)
+      Rcoasterdoc.save()
     })
+    //   const reviewFind = await Rcoaster.findById(req.params.id)
+    //   const review = await new reviewSchema(req.body)
+    //   await review.save()
+
+    //   reviewFind.reviews.push(review._id)
+    //   reviewFind.save()
+    //   return res.status(201).json({
+    //     review
+    //   })
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
@@ -77,6 +87,18 @@ const createRides = async (req, res) => {
     return res.status(500).json({ error: error.message })
   }
 }
+const deleteRide = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Rcoaster.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Ride deleted')
+    }
+    throw new Error('Review not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
   createReview,
@@ -85,5 +107,6 @@ module.exports = {
   deleteReview,
   updateReview,
   getAllRides,
-  createRides
+  createRides,
+  deleteRide
 }
