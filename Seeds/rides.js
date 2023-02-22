@@ -18,7 +18,7 @@ const main = async () => {
     {
       name: 'Green Lantern',
       picture:
-        'https://static.wikia.nocookie.net/sixflags/images/6/67/GreenLanternSFGADV.jpg/revision/latest?cb=20180629095710',
+        'https://sf-static.sixflags.com/wp-content/uploads/Green-Lantern-1440x1533-1-1440x720.jpg',
       year_built: '2011',
       height_requirement: '54"',
       ride_time: '2:30',
@@ -27,14 +27,14 @@ const main = async () => {
       reviews: []
     },
     {
-      name: 'Houdinis great escape',
+      name: 'Kingda Ka',
       picture:
-        'https://sf-static.sixflags.com/wp-content/uploads/2020/04/sfga-houdinisgreatescape_1440x1533_0-1-768x818.jpg',
-      year_built: '1999',
-      height_requirement: 'Adult(none)  Child: 48" No Lap Children',
-      ride_time: 'unknown',
-      max_speed: 'slow',
-      intensity: 'Mild',
+        'https://sf-static.sixflags.com/wp-content/uploads/2020/04/sfga-knigdaka_1440x1533_0-1-768x818.jpg',
+      year_built: '2005',
+      height_requirement: '54"',
+      ride_time: ':50',
+      max_speed: '128mph',
+      intensity: 'Maximum',
       reviews: []
     }
   ]
