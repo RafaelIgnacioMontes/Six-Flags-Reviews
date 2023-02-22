@@ -16,11 +16,11 @@ const Home = () => {
     <div>
       <h1></h1>
       <div>
-        {rideList.map((rides) => {
-          ;<div>
+        {rideList.map((rides) => (
+          <div>
             <div>{rides.name}</div>
           </div>
-        })}
+        ))}
       </div>
     </div>
   )
