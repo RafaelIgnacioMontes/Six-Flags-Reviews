@@ -1,58 +1,61 @@
-import { useState } from 'react'
-import axios from 'axios'
+import { useState } from "react";
+import axios from "axios";
 
 const ReviewForm = ({ props, getAllRides, rides }) => {
   const initialState = {
-    name: '',
-    subject: '',
-    message: ''
-  }
-  const [formState, setFormState] = useState(initialState)
+    name: "",
+    subject: "",
+    message: "",
+  };
+  const [formState, setFormState] = useState(initialState);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormState((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     await axios
       .post(`http://localhost:3001/api/rides/${rides._id}/review`, formState)
-      .then(() => {})
-    window.location.reload()
+      .then(() => {});
+    window.location.reload();
 
-    setFormState(initialState)
-  }
+    setFormState(initialState);
+  };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Form" onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
       <input
+        className="Input"
         type="text"
-        name={'name'}
+        name={"name"}
         value={formState.name}
         onChange={handleChange}
         placeholder="name"
       ></input>
       <label htmlFor="subject">Subject:</label>
       <input
+        className="Input"
         type="text"
-        name={'subject'}
+        name={"subject"}
         onChange={handleChange}
         placeholder="subject"
         value={formState.subject}
       />
       <label htmlFor="message">Message</label>
       <textarea
-        name={'message'}
+        name={"message"}
         cols="30"
-        rows="10"
+        rows="7"
         onChange={handleChange}
         value={formState.message}
       ></textarea>
       <button type="submit">Send</button>
     </form>
-  )
-}
-export default ReviewForm
+  );
+};
+export default ReviewForm;
