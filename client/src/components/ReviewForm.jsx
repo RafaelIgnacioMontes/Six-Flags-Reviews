@@ -22,9 +22,10 @@ const ReviewForm = ({ props, getAllRides, rides }) => {
     await axios
       .post(`http://localhost:3001/api/rides/${rides._id}/review`, formState)
       .then(() => {})
-    window.location.reload()
+    // window.location.reload()
 
     setFormState(initialState)
+    getAllRides()
   }
   return (
     <form onSubmit={handleSubmit}>

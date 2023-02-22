@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import ReviewForm from "./ReviewForm";
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import ReviewForm from './ReviewForm'
 
 const Home = (response) => {
-  const [rideList, setRideList] = useState([]);
+  const [rideList, setRideList] = useState([])
 
   const getAllRides = async () => {
-    const response = await axios.get("http://localhost:3001/api/rides");
-    setRideList(response.data.rides);
-  };
+    const response = await axios.get('http://localhost:3001/api/rides')
+    setRideList(response.data.rides)
+  }
 
   const delRide = async (ridesId) => {
-    await axios.delete(`http://localhost:3001/api/rides/${ridesId}`);
-    getAllRides();
-  };
+    await axios.delete(`http://localhost:3001/api/rides/${ridesId}`)
+    getAllRides()
+  }
 
   const delReview = async (id) => {
-    await axios.delete(`http://localhost:3001/api/rides/${id}/review/${id}`);
-    getAllRides();
-  };
+    await axios.delete(`http://localhost:3001/api/rides/${id}/review/${id}`)
+    getAllRides()
+  }
 
   useEffect(() => {
-    getAllRides();
-  }, []);
+    getAllRides()
+  }, [])
   return (
     <div className="Main-Card">
       <h1>Rides!</h1>
@@ -38,7 +38,7 @@ const Home = (response) => {
               <p>Max Speed:{rides.max_speed}</p>
               <p>Intensity Level:{rides.intensity}</p>
               <div>
-                Reviews:{" "}
+                Reviews:{' '}
                 {rides.reviews?.map((review) => (
                   <div key={review._id}>
                     <div>Name:{review.name}</div>
@@ -62,7 +62,7 @@ const Home = (response) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
