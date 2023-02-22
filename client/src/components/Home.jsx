@@ -1,24 +1,24 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = (response) => {
-  const [rideList, setRideList] = useState([])
+  const [rideList, setRideList] = useState([]);
 
   const getAllRides = async () => {
-    const response = await axios.get('http://localhost:3001/api/rides')
-    setRideList(response.data.rides)
-  }
+    const response = await axios.get("http://localhost:3001/api/rides");
+    setRideList(response.data.rides);
+  };
 
   const delRide = async (ridesId) => {
     const response = await axios.delete(
       `http://localhost:3001/api/rides/${ridesId}`
-    )
-    getAllRides()
-  }
+    );
+    getAllRides();
+  };
 
   useEffect(() => {
-    getAllRides()
-  }, [])
+    getAllRides();
+  }, []);
   return (
     <div>
       <h1>Rides!</h1>
@@ -44,7 +44,7 @@ const Home = (response) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
