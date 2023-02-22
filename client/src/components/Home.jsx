@@ -15,6 +15,11 @@ const Home = (response) => {
     getAllRides()
   }
 
+  const delReview = async (id) => {
+    await axios.delete(`http://localhost:3001/api/rides/${id}/review/${id}`)
+    getAllRides()
+  }
+
   useEffect(() => {
     getAllRides()
   }, [])
@@ -35,7 +40,20 @@ const Home = (response) => {
               <div>Max Speed:{rides.max_speed}</div>
               <div>Intensity Level:{rides.intensity}</div>
               <div>
-                Reviews: <ReviewForm ReviewForm={ReviewForm} />
+                Reviews:{' '}
+                {rides.reviews?.map((review) => (
+                  <div key={review._id}>
+                    <div>Name:{review.name}</div>
+                    <div>Subject:{review.subject}</div>
+                    <div>Message:{review.message}</div>
+                    <button onClick={() => delReview(review._id)}>
+                      Delete
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <div>
+                <ReviewForm rides={rides} getAllRides={getAllRides} />
               </div>
 
               <button onClick={() => delRide(rides._id)}>
