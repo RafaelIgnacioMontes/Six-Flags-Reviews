@@ -16,7 +16,7 @@ const ReviewForm = (props) => {
 const handleSubmit = async (event) => {
 
   event.preventDefault()
-  await axios.post('http://localhost:3001/Reviews', formState)
+  await axios.post('http://localhost:3001/review', formState)
   
   console.log(formState)
  
