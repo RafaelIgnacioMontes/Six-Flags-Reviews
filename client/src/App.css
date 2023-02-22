@@ -1,8 +1,35 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+img {
+  width: 150px;
 }
 
-.App-logo {
+.Main-Card {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(157, 157, 157);
+  margin: 15px;
+  padding: 10px;
+}
+
+.Ride-card {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(84, 84, 84);
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +62,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

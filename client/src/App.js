@@ -1,10 +1,10 @@
-import { Routes, Route } from 'react-router-dom'
-import './App.css'
-import Nav from './components/Nav'
-import Home from './components/Home'
-import Rides from './components/Rides'
-import Reviews from './components/Reviews'
-import ReviewForm from './components/ReviewForm'
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import Rides from "./components/Rides";
+import Reviews from "./components/Reviews";
+import ReviewForm from "./components/ReviewForm";
 function App() {
   return (
     <div>
@@ -19,7 +19,7 @@ function App() {
         </Routes>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
