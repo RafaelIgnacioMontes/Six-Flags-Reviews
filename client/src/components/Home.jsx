@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import ReviewForm from './ReviewForm'
 
 const Home = (response) => {
   const [rideList, setRideList] = useState([])
@@ -10,9 +11,7 @@ const Home = (response) => {
   }
 
   const delRide = async (ridesId) => {
-    const response = await axios.delete(
-      `http://localhost:3001/api/rides/${ridesId}`
-    )
+    await axios.delete(`http://localhost:3001/api/rides/${ridesId}`)
     getAllRides()
   }
 
@@ -35,7 +34,10 @@ const Home = (response) => {
               <div>Ride Time:{rides.ride_time}</div>
               <div>Max Speed:{rides.max_speed}</div>
               <div>Intensity Level:{rides.intensity}</div>
-              <div>Reviews:</div>
+              <div>
+                Reviews: <ReviewForm ReviewForm={ReviewForm} />
+              </div>
+
               <button onClick={() => delRide(rides._id)}>
                 Delete this Ride
               </button>
