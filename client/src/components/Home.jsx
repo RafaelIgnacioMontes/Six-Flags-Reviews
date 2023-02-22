@@ -1,46 +1,44 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import ReviewForm from './ReviewForm'
+import { useState, useEffect } from "react";
+import axios from "axios";
+import ReviewForm from "./ReviewForm";
 
 const Home = (response) => {
-  const [rideList, setRideList] = useState([])
+  const [rideList, setRideList] = useState([]);
 
   const getAllRides = async () => {
-    const response = await axios.get('http://localhost:3001/api/rides')
-    setRideList(response.data.rides)
-  }
+    const response = await axios.get("http://localhost:3001/api/rides");
+    setRideList(response.data.rides);
+  };
 
   const delRide = async (ridesId) => {
-    await axios.delete(`http://localhost:3001/api/rides/${ridesId}`)
-    getAllRides()
-  }
+    await axios.delete(`http://localhost:3001/api/rides/${ridesId}`);
+    getAllRides();
+  };
 
   const delReview = async (id) => {
-    await axios.delete(`http://localhost:3001/api/rides/${id}/review/${id}`)
-    getAllRides()
-  }
+    await axios.delete(`http://localhost:3001/api/rides/${id}/review/${id}`);
+    getAllRides();
+  };
 
   useEffect(() => {
-    getAllRides()
-  }, [])
+    getAllRides();
+  }, []);
   return (
-    <div>
+    <div className="Main-Card">
       <h1>Rides!</h1>
       <div>
         {rideList.map((rides) => (
           <div key={rides._id}>
-            <div>
-              {rides.name}
+            <div className="Ride-card">
+              <h2>{rides.name}</h2>
+              <img src={rides.picture} alt="Rides images" />
+              <p>Established:{rides.year_built}</p>
+              <p>Minimum Height Requirement:{rides.height_requirement}</p>
+              <p>Ride Time:{rides.ride_time}</p>
+              <p>Max Speed:{rides.max_speed}</p>
+              <p>Intensity Level:{rides.intensity}</p>
               <div>
-                <img src={rides.picture} alt="Rides images" />
-              </div>
-              <div>Established:{rides.year_built}</div>
-              <div>Minimum Height Requirement:{rides.height_requirement}</div>
-              <div>Ride Time:{rides.ride_time}</div>
-              <div>Max Speed:{rides.max_speed}</div>
-              <div>Intensity Level:{rides.intensity}</div>
-              <div>
-                Reviews:{' '}
+                Reviews:{" "}
                 {rides.reviews?.map((review) => (
                   <div key={review._id}>
                     <div>Name:{review.name}</div>
@@ -64,7 +62,7 @@ const Home = (response) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
