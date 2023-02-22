@@ -22,14 +22,15 @@ const ReviewForm = ({ props, getAllRides, rides }) => {
     await axios
       .post(`http://localhost:3001/api/rides/${rides._id}/review`, formState)
       .then(() => {})
-    // window.location.reload()
+    window.location.reload()
 
     setFormState(initialState)
-    getAllRides()
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Form" onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
       <input
+        className="Input"
         type="text"
         name={'name'}
         value={formState.name}
@@ -38,6 +39,7 @@ const ReviewForm = ({ props, getAllRides, rides }) => {
       ></input>
       <label htmlFor="subject">Subject:</label>
       <input
+        className="Input"
         type="text"
         name={'subject'}
         onChange={handleChange}
@@ -48,7 +50,7 @@ const ReviewForm = ({ props, getAllRides, rides }) => {
       <textarea
         name={'message'}
         cols="30"
-        rows="10"
+        rows="7"
         onChange={handleChange}
         value={formState.message}
       ></textarea>
