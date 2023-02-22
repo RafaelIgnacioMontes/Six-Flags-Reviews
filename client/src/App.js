@@ -1,6 +1,10 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav'
 import Home from './components/Home'
+import Rides from './components/Rides'
+import Reviews from './components/Reviews'
+import ReviewForm from './components/ReviewForm'
 function App() {
   return (
     <div>
@@ -12,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Rides" element={<Rides />} />
           <Route path="/Reviews" element={<Reviews />} />
+          <Route path="/ReviewForm" element={<ReviewForm />} />
         </Routes>
       </main>
     </div>
