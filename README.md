@@ -34,10 +34,29 @@
 
 ### **_Screenshots_**
 
----
+###### Home
+
+<img width="500" alt="Home page image" src="Screenshot from 2023-02-23 12-08-31.png">
+
+###### Add a Ride
+
+## <img width="500" alt="Add a ride page image" src="image.png">
 
 ### **_Future Updates_**
+
+- [ ] Have an initial page with navigatable images to a full page of the ride
+- [ ] Additional parks
+- [ ] Videos of rides on the page
+- [ ] Likes and dislikes counter
+- [ ] User authentication
+- [ ] Add a search bar for rides
 
 ---
 
 ### **_Credits_**
+
+##### React: [React](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_interactivity_filtering_conditional_rendering)
+
+##### CRUD: [CRUD](https://geeksforgeeks.com/)
+
+##### CSS: [CSS](https://weekendprojects.dev/posts/which-responsive-media-query-breakpoints-should-you-use/)
