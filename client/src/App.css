@@ -1,9 +1,41 @@
-/* .App {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.App {
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-} */
+  background-color: rgb(23, 23, 23);
+  margin: 0;
+  padding: 0;
+}
 
 img {
-  width: 200px;
+  display: ;
+  object-fit: cover;
+  height: 25em;
+  width: 25em;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.Nav-Bar {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: rgba(10, 78, 65, 0.727);
+  height: 3em;
+  margin: 0;
+  color: aliceblue;
+  text-align: left;
+}
+
+.Nav-Link {
+  color: aliceblue;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.Title {
+  color: aliceblue;
 }
 
 .Main-Card {
@@ -12,7 +44,7 @@ img {
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(157, 157, 157);
+  background-color: rgba(255, 255, 255, 0);
   margin: 15px;
   padding: 10px;
 }
@@ -23,7 +55,7 @@ img {
   align-content: center;
   justify-content: center;
   flex-direction: row;
-  background-color: rgb(84, 84, 84);
+  background-color: rgb(255, 255, 255);
   margin: 15px;
   padding: 10px;
   border-radius: 10px;
@@ -37,9 +69,18 @@ img {
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(60, 60, 60);
+  line-height: 0.1em;
+  background-color: rgb(23, 47, 72);
+  color: aliceblue;
   width: 40em;
   height: 750px;
+}
+
+.Ride-Name {
+  margin: 25px;
+  text-transform: uppercase;
+  font-size: 35px;
+  margin-bottom: 35px;
 }
 
 .Review-Div {
@@ -48,7 +89,7 @@ img {
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(160, 160, 160);
+  background-color: rgb(224, 224, 224);
   height: 750px;
   width: 40em;
 }
@@ -57,14 +98,21 @@ img {
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: center;
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
   height: 300px;
   width: 95%;
-  background-color: rgb(46, 46, 46);
+  background-color: rgba(46, 46, 46, 0);
   color: aliceblue;
+}
+
+.User-Review {
+  line-height: 0.3em;
+  background-color: darkslategrey;
+  border-radius: 15px;
+  width: 32em;
+  margin: 5px;
 }
 
 .test-card {
@@ -87,10 +135,46 @@ img {
   justify-content: center;
   flex-direction: column;
   background-color: rgb(59, 59, 59);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   margin: 15px;
   padding: 10px;
   border-radius: 10px;
-  width: 90%;
+  width: 80%;
+}
+
+.Form-Btn {
+  color: aliceblue;
+  font-size: 15px;
+  background-color: rgb(24, 24, 24);
+  width: 50%;
+  height: 40px;
+  border-style: none;
+  border-radius: 20px;
+  margin-top: 8px;
+}
+
+.Form-Btn-Review-Delete {
+  color: aliceblue;
+  font-size: 12px;
+  background-color: rgb(24, 24, 24);
+  width: 15%;
+  height: 25px;
+  border-style: none;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.Form-Btn-Delete {
+  color: aliceblue;
+  font-size: 15px;
+  background-color: rgb(24, 24, 24);
+  width: 30%;
+  height: 40px;
+  border-style: none;
+  border-radius: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .Form {
@@ -104,10 +188,18 @@ img {
 .Input {
   background-color: rgba(13, 19, 19, 0.732);
   border-style: none;
+  border-radius: 5px;
   width: 80%;
   height: 30px;
   color: aliceblue;
   margin: 5px;
+}
+
+.Input-Message {
+  background-color: rgba(13, 19, 19, 0.732);
+  border-style: none;
+  border-radius: 5px;
+  color: aliceblue;
 }
 
 /* .App-logo {

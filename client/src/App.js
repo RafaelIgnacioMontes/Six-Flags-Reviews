@@ -7,7 +7,7 @@ import Reviews from "./components/Reviews";
 import ReviewForm from "./components/ReviewForm";
 function App() {
   return (
-    <div>
+    <div className="App">
       <header>
         <Nav />
       </header>

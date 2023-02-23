@@ -25,12 +25,15 @@ const Home = (response) => {
   }, []);
   return (
     <div className="Main-Card">
-      <h1>Rides!</h1>
+      <h1 className="Title">
+        Six Flags Great Adventure
+        {/* in Jackson Township, New Jersey */}
+      </h1>
 
       {rideList.map((rides) => (
         <div className="Ride-card" key={rides._id}>
           <div className="Ride-Div">
-            <h2>{rides.name}</h2>
+            <h2 className="Ride-Name">{rides.name}</h2>
             <img src={rides.picture} alt="Rides images" />
             <p>Established: {rides.year_built}</p>
             <p>Minimum Height Requirement: {rides.height_requirement}</p>
@@ -43,16 +46,21 @@ const Home = (response) => {
               <h3>Reviews: </h3>
               <div className="Posted-Reviews">
                 {rides.reviews?.map((review) => (
-                  <div key={review._id}>
-                    <h3>Name:</h3>
+                  <div className="User-Review" key={review._id}>
+                    <h4 className="Review-Info">Name:</h4>
                     {review.name}
-                    <h3>Subject:</h3>
+                    <h4>Subject:</h4>
                     {review.subject}
-                    <h3>Message:</h3>
+                    <h4>Message:</h4>
                     {review.message}
-                    <button onClick={() => delReview(review._id)}>
-                      Delete
-                    </button>
+                    <div>
+                      <button
+                        className="Form-Btn-Review-Delete"
+                        onClick={() => delReview(review._id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -60,8 +68,11 @@ const Home = (response) => {
               <div className="test-card2">
                 <ReviewForm rides={rides} getAllRides={getAllRides} />
               </div>
-              <button onClick={() => delRide(rides._id)}>
-                Delete this Ride
+              <button
+                className="Form-Btn-Delete"
+                onClick={() => delRide(rides._id)}
+              >
+                Delete Ride
               </button>
             </div>
           </div>
