@@ -35,14 +35,37 @@
 ### ![Home Page](https://media.discordapp.net/attachments/1075519158097281097/1078398254053605386/Screenshot_from_2023-02-23_12-08-31.png?width=1302&height=660)
 ### ![Add a Ride!](https://media.discordapp.net/attachments/1075519158097281097/1078398253780971530/Screenshot_from_2023-02-23_12-10-29.png?width=1302&height=660)
 
----
+###### Home
+
+<img width="500" alt="Home page image" src="Screenshot from 2023-02-23 12-08-31.png">
+
+###### Add a Ride
+
+## <img width="500" alt="Add a ride page image" src="image.png">
 
 ### **_Future Updates_**
+<<<<<<< HEAD
 #### -Have an initial page with navigatable images to a full page of the ride
 #### -Aditional parks and locations
 #### -A video of the rides on the page
 #### -Like and dislike Counter
 #### -User authentication
+=======
+
+- [ ] Have an initial page with navigatable images to a full page of the ride
+- [ ] Additional parks
+- [ ] Videos of rides on the page
+- [ ] Likes and dislikes counter
+- [ ] User authentication
+- [ ] Add a search bar for rides
+
+>>>>>>> 41c38fd6f6eb52d1b0bbb4338517b93fceedde13
 ---
 
 ### **_Credits_**
+
+##### React: [React](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_interactivity_filtering_conditional_rendering)
+
+##### CRUD: [CRUD](https://geeksforgeeks.com/)
+
+##### CSS: [CSS](https://weekendprojects.dev/posts/which-responsive-media-query-breakpoints-should-you-use/)
