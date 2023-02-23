@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -7,15 +7,12 @@ const Nav = () => {
         <NavLink className="Nav-Link" to="/">
           Home
         </NavLink>
-        <NavLink className="Nav-Link" to="/Rides">
-          Rides
-        </NavLink>
-        <NavLink className="Nav-Link" to="/Reviews">
-          Reviews
+        <NavLink className="Nav-Link" to="/RidesForm">
+          Add a Ride!
         </NavLink>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
