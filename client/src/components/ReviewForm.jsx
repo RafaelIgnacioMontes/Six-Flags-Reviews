@@ -48,13 +48,16 @@ const ReviewForm = ({ props, getAllRides, rides }) => {
       />
       <label htmlFor="message">Message</label>
       <textarea
+        className="Input-Message"
         name={"message"}
         cols="30"
         rows="7"
         onChange={handleChange}
         value={formState.message}
       ></textarea>
-      <button type="submit">Send</button>
+      <button className="Form-Btn" type="submit">
+        Send
+      </button>
     </form>
   );
 };
