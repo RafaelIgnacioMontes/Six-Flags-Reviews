@@ -5,7 +5,7 @@ import Home from './components/Home'
 import RidesForm from './components/RidesForm'
 function App() {
   return (
-    <div>
+    <div className="App">
       <header>
         <Nav />
       </header>

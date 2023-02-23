@@ -1,15 +1,21 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <nav>
-      <h4>Six Flags Great Adventure in Jackson Township, New Jersey</h4>
+    <nav className="Nav-Bar">
       <div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/RidesForm">Add a Ride!!</NavLink>
+        <NavLink className="Nav-Link" to="/">
+          Home
+        </NavLink>
+        <NavLink className="Nav-Link" to="/Rides">
+          Rides
+        </NavLink>
+        <NavLink className="Nav-Link" to="/Reviews">
+          Reviews
+        </NavLink>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
