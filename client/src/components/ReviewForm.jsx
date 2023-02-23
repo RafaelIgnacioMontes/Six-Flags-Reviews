@@ -54,7 +54,9 @@ const ReviewForm = ({ props, getAllRides, rides }) => {
         onChange={handleChange}
         value={formState.message}
       ></textarea>
-      <button type="submit">Send</button>
+      <button className="Form-Btn" type="submit">
+        Send
+      </button>
     </form>
   )
 }
