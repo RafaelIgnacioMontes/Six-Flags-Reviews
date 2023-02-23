@@ -21,7 +21,7 @@ const RidesForm = ({ props, getAllRides }) => {
     event.preventDefault()
 
     await axios
-      .post('http://localhost:3001/api/rides', formState)
+      .post('api/rides', formState)
       .then((response) => {})
       .catch((error) => {
         console.error(error)

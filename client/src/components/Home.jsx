@@ -6,17 +6,17 @@ const Home = (response) => {
   const [rideList, setRideList] = useState([])
 
   const getAllRides = async () => {
-    const response = await axios.get('http://localhost:3001/api/rides')
+    const response = await axios.get('/api/rides')
     setRideList(response.data.rides)
   }
 
   const delRide = async (ridesId) => {
-    await axios.delete(`http://localhost:3001/api/rides/${ridesId}`)
+    await axios.delete(`/api/rides/${ridesId}`)
     getAllRides()
   }
 
   const delReview = async (id) => {
-    await axios.delete(`http://localhost:3001/api/rides/${id}/review/${id}`)
+    await axios.delete(`/api/rides/${id}/review/${id}`)
     getAllRides()
   }
 

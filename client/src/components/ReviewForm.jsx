@@ -19,9 +19,7 @@ const ReviewForm = ({ props, getAllRides, rides }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await axios
-      .post(`http://localhost:3001/api/rides/${rides._id}/review`, formState)
-      .then(() => {})
+    await axios.post(`api/rides/${rides._id}/review`, formState).then(() => {})
 
     setFormState(initialState)
     getAllRides()

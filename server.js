@@ -11,7 +11,12 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 app.use(logger('dev'))
+app.use(express.static(`${__dirname}/client/build`))
 app.use('/api', routes)
+
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`)
+})
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
